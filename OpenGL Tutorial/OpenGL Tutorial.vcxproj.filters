@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="资源文件\Textures">
+      <UniqueIdentifier>{5aecbfff-42ef-4c6c-aee2-d049b254853d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\Shaders">
+      <UniqueIdentifier>{079f873c-0953-43d0-a551-8f5b4eb58ede}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="texture_01.jpg">
+      <Filter>资源文件\Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Terrain.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="Terrain.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="texture.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="texture.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="triangle.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="triangle.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="Model.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="Model.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="SkyBox.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="SkyBox.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseMesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderable2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleRenderer2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Batch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformFeedback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTexture2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BMPLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BMPImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MTLLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMesh.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="maths.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderable2D.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer2D.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleRenderer2D.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture2D.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Batch.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformFeedback.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineEnum.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTexture2D.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BMPLoader.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BMPImage.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MTLLoader.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+#pragma once
+
+
+enum GAMESTATE
+{
+	GAME_ACTIVE,
+	GAME_MENU,
+	GAME_WIN
+
+};
+
+enum DATATYPE
+{
+	GL_DATATYPE_TERRAIN,
+	GL_DATATYPE_VERTEX,
+
+};
+
+
