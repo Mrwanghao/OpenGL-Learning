@@ -1,4 +1,6 @@
 #include "MTLLoader.h"
+#include "Material.h"
+#include "MaterialManager.h"
 #include <fstream>
 
 #include <sstream>
@@ -56,7 +58,14 @@ void MTLLoader::ReadMTLFile()
 			{
 				iss >> name;
 				mtl = new Material(name.c_str());
+				objMtlMap[mtl->name] = MaterialManager::Instance->add(mtl);
 				n++;
+			}
+			else if (value == "map_Kd")
+			{
+				iss >> texture;
+
+
 			}
 
 		}

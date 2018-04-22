@@ -154,6 +154,9 @@
     <ClCompile Include="MaterialManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ImageSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -251,6 +254,9 @@
     </ClInclude>
     <ClInclude Include="MaterialManager.h">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSet.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

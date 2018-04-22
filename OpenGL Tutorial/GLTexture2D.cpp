@@ -1,40 +1,47 @@
 #include "GLTexture2D.h"
 
-GLTexture2D::GLTexture2D()
+GLTexture2D::GLTexture2D(float _width, float _height, int _type, int _precision)
 	:
-	m_Width(0),
-	m_Height(0),
-	m_InternalFormat(GL_RGB),
-	m_ImageFormat(GL_RGB),
-	m_WrapS(GL_REPEAT),
-	m_WrapT(GL_REPEAT),
-	m_FilterMax(GL_LINEAR),
-	m_FilterMin(GL_LINEAR)
-
+	width(_width),
+	height(_height),
+	type(_type),
+	precision(_precision)
 {
-	glGenTextures(1, &m_TextureID);
+	init();
 }
 
 GLTexture2D::~GLTexture2D()
 {
+	glDeleteTextures(1, &textureID);
 }
 
-void GLTexture2D::generate(GLuint _width, GLuint _height, unsigned char * data)
+void GLTexture2D::init()
 {
-	this->m_Width = _width;
-	this->m_Height = _height;
+	glGenTextures(1, &textureID);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, textureID);
 
-	glBindTexture(GL_TEXTURE_2D, m_TextureID);
-	glTexImage2D(GL_TEXTURE_2D, 0, this->m_InternalFormat, this->m_Width, this->m_Height, 0, this->m_ImageFormat, GL_UNSIGNED_BYTE, data);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, this->m_WrapS);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, this->m_WrapT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, this->m_FilterMax);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, this->m_FilterMin);
+	GLint filterParam = precision == HIGH_PRE ? GL_LINEAR : GL_NEAREST;
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filterParam);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filterParam);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+
+	float borderColor[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+	GLint preColor = precision == HIGH_PRE ? GL_RGBA16 : GL_RGBA8;
+	GLint preDepth = precision == HIGH_PRE ? GL_DEPTH_COMPONENT32 : GL_DEPTH_COMPONENT24;
+	switch (type)
+	{
+	case TEXTURE_TYPE_COLOR:
+		glTexImage2D(GL_TEXTURE_2D, 0, preColor, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
+		break;
+
+	case TEXTURE_TYPE_DEPTH:
+		glTexImage2D(GL_TEXTURE_2D, 0, preDepth, width, height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+		break;
+	}
+
+
 	glBindTexture(GL_TEXTURE_2D, 0);
-
-}
-
-void GLTexture2D::enable() const
-{
-	glBindTexture(GL_TEXTURE_2D, this->m_TextureID);
 }

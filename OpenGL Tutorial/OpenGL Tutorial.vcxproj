@@ -46,6 +46,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="GLTexture2D.cpp" />
+    <ClCompile Include="ImageSet.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Material.cpp" />
@@ -80,6 +81,7 @@
     <ClInclude Include="EngineEnum.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GLTexture2D.h" />
+    <ClInclude Include="ImageSet.h" />
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="MaterialManager.h" />
