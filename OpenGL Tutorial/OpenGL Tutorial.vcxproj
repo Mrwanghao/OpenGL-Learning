@@ -48,6 +48,8 @@
     <ClCompile Include="GLTexture2D.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="MaterialManager.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="MTLLoader.cpp" />
@@ -79,6 +81,8 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GLTexture2D.h" />
     <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MaterialManager.h" />
     <ClInclude Include="maths.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />

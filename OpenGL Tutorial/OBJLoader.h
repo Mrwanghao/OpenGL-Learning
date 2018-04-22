@@ -2,7 +2,9 @@
 class OBJLoader
 {
 public:
-	OBJLoader();
+	OBJLoader(const char *_mtlFileName);
 	~OBJLoader();
+
+
 };
 

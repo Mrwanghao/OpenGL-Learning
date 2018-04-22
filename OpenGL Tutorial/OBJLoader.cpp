@@ -2,7 +2,8 @@
 
 
 
-OBJLoader::OBJLoader()
+OBJLoader::OBJLoader(const char *_mtlFileName)
+	
 {
 }
 

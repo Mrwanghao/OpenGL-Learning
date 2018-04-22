@@ -148,6 +148,12 @@
     <ClCompile Include="OBJLoader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -237,8 +243,14 @@
     <ClInclude Include="MTLLoader.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
     <ClInclude Include="OBJLoader.h">
-      <Filter>头文件</Filter>
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialManager.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
