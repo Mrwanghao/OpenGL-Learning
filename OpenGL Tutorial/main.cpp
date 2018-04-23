@@ -28,16 +28,17 @@ int main()
 	Window window(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 	
 	//SkyBox _skybox;
-#if 1 
+#if 1
 	//Model rock_model(std::string("nanosuit/nanosuit.obj"));
 	Renderer::Terrain ter;
 	ter.loadHeightMap("heightmap.raw");
-	//std::cout << "update" << std::endl;
-	//std::cout << sizeof(struct BITMAPFILEHEADER);
+	ter.setDataToBuffer();
 #else
-	Texture2D mTex("texture_01.jpg");
-
-	//Terrain mTerrain;
+	//Texture2D mTex("texture_01.jpg");
+	//Model rock_model(std::string("nanosuit/nanosuit.obj"));
+	Renderer::Terrain ter;
+	ter.loadHeightMap("heightmap.raw");
+	ter.setDataToBuffer();
 #endif
 
 	while (!window.closed())
@@ -49,10 +50,11 @@ int main()
 #if 1
 		//rock_model.Draw(window);
 		ter.draw(window);
-#else 
-		mTex.draw(window);
 		
-		//mTerrain.draw(window);
+#else 
+		//mTex.draw(window);
+		//rock_model.Draw(window);
+		ter.draw(window);
 
 #endif
 

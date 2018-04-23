@@ -24,7 +24,15 @@ namespace Renderer
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	
+	Buffer::Buffer(std::vector<float> &data, GLsizei count, GLuint componentCount)
+		:
+		mComponentCount(componentCount)
+	{
+		glGenBuffers(1, &mBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, mBufferID);
+		glBufferData(GL_ARRAY_BUFFER, 3 * count * sizeof(float), &data[0], GL_STATIC_DRAW);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
 
 	Buffer::~Buffer()
 	{

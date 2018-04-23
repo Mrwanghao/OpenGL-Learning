@@ -80,7 +80,7 @@ namespace Renderer
 	{
 		mVertexArray->enable();
 		mIndexBuffer->enable();
-
+		
 		mShader->enable();
 
 		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 100.0f);
@@ -96,11 +96,11 @@ namespace Renderer
 #endif
 
 		glDrawElements(GL_TRIANGLES, mIndexBuffer->getCount(), GL_UNSIGNED_INT, 0);
+		
 		mShader->disable();
 
 		mIndexBuffer->disable();
 		mVertexArray->disable();
-
 		
 	}
 

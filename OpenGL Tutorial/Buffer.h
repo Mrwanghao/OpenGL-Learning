@@ -4,17 +4,20 @@
 
 #include "EngineEnum.h"
 #include <glm/vec3.hpp>
+#include <vector>
 
 namespace Renderer 
 {
 
 	struct Vertex;
+	struct TerrainVec3;
 	
 	class Buffer
 	{
 	public:
 		Buffer(GLfloat *data, GLsizei count, GLuint componentCount);
 		Buffer(void *data, GLsizei count);
+		Buffer(std::vector<float> &data, GLsizei count, GLuint componentCount);
 		~Buffer();
 
 	public:
