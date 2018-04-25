@@ -1,2 +1,5 @@
-﻿  Terrain.cpp
+﻿  main.cpp
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(220): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(225): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(230): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
   OpenGL Tutorial.vcxproj -> C:\Users\wanghao\source\repos\OpenGL Tutorial\Debug\OpenGL Tutorial.exe

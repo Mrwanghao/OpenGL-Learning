@@ -6,7 +6,8 @@ namespace Renderer
 
 	Buffer::Buffer(GLfloat *pData, GLsizei pCount, GLuint pComponentCount)
 		:
-		mComponentCount(pComponentCount)
+		mComponentCount(pComponentCount),
+		mCount(pCount)
 	{
 		glGenBuffers(1, &mBufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, mBufferID);

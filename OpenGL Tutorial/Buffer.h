@@ -25,10 +25,11 @@ namespace Renderer
 		inline void disable() const { glBindBuffer(GL_ARRAY_BUFFER, 0); }
 
 		inline GLuint getComponentCount() const { return mComponentCount; }
-
+		inline GLuint getCount() const { return mCount; }
 	private:
 		GLuint mBufferID;
 		GLuint mComponentCount;
+		GLuint mCount;
 	};
 };
 

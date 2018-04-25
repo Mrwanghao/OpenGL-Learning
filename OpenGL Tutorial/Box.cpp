@@ -31,7 +31,7 @@ Box::Box()
 	};
 	m_VertexArray->addBuffer(new Renderer::Buffer(normals, 24 * 3, 3), 2);
 
-	GLuint indices[] =
+	GLushort indices[] =
 	{
 		0,
 	};

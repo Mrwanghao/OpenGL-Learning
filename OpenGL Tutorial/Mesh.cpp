@@ -28,8 +28,8 @@ namespace Renderer
 		mVertexArray->addBuffer(mBuffer, 3, 3, sizeof(Vertex), (void *)offsetof(Vertex, Tangent));
 		mVertexArray->addBuffer(mBuffer, 4, 3, sizeof(Vertex), (void *)offsetof(Vertex, Bitangent));
 		
-		mIndexBuffer = new IndexBuffer(&indices[0], indices.size());
-
+		//mIndexBuffer = new IndexBuffer(&indices[0], indices.size());
+		
 #else
 		// create buffers/arrays
 		glGenVertexArrays(1, &VAO);

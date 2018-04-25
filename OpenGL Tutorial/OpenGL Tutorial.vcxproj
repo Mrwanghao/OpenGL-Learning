@@ -42,6 +42,7 @@
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Collada\Collada.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="glad.c" />
@@ -64,6 +65,7 @@
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Texture2D.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="TransformFeedback.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -77,6 +79,7 @@
     <ClInclude Include="Box.h" />
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Collada\Collada.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineEnum.h" />
     <ClInclude Include="Game.h" />
@@ -99,6 +102,7 @@
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="tinyxml2\tinyxml2.h" />
     <ClInclude Include="TransformFeedback.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="Window.h" />

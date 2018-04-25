@@ -57,7 +57,7 @@ namespace Renderer
 		};
 		mVertexArray->addBuffer(new Buffer(texcoords, 4 * 2, 2), 2);
 
-		GLuint indices[] =
+		GLushort indices[] =
 		{ 
 			0, 1, 2,
 			2, 3, 0,

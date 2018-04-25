@@ -52,13 +52,13 @@ namespace Renderer
 		mVertexArray->enable();
 		mShader->enable();
 
-		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 100.0f);
+		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 1000.0f);
 		mShader->setMat4("projection", projection);
 
 		glm::mat4 view = mCamera.GetViewMatrix();
 		mShader->setMat4("view", view);
 
-		glm::mat4 model = glm::mat4(0.1f);
+		glm::mat4 model = glm::mat4(0.000001f);
 		mShader->setMat4("model", model);
 
 		glDrawArrays(GL_TRIANGLES, 0, (mWidth - 1) * (mWidth - 1 ) * 6);
@@ -75,6 +75,7 @@ namespace Renderer
 
 	void Terrain::setDataToBuffer()
 	{
+		_vertices.reserve(3 * 6 * (mWidth - 1) * (mWidth - 1));
 		for (int row = 0; row < mWidth - 1; row++)
 		{
 			for (int col = 0; col < mWidth - 1; col++)

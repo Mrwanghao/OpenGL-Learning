@@ -7,18 +7,18 @@ namespace Renderer
 	class IndexBuffer
 	{
 	public:
-		IndexBuffer(GLuint *pData, GLsizei pCount);
+		IndexBuffer(GLushort *pData, GLint pCount);
 		~IndexBuffer();
 
 	public:
 		inline void enable() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIndexBufferID); }
 		inline void disable() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); }
 
-		inline GLsizei getCount() const { return mCount; }
+		inline GLint getCount() const { return mCount; }
 
 	private:
 		GLuint mIndexBufferID;
-		GLsizei mCount;
+		GLint mCount;
 	};
 
 };

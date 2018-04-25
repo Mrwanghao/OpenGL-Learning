@@ -35,7 +35,7 @@ namespace Renderer
 		};
 		mVertexArray->addBuffer(new Buffer(colors, 4 * 3, 3), 1);
 
-		GLuint indices[] = { 0, 1, 2, 2, 3, 0 };
+		GLushort indices[] = { 0, 1, 2, 2, 3, 0 };
 		mIndexBuffer = new IndexBuffer(indices, 6);
 	}
 

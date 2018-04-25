@@ -82,6 +82,7 @@ namespace Renderer {
 		glEnable(GL_DEPTH_TEST);
 
 		//glEnable(GL_MULTISAMPLE);
+		
 
 		return true;
 	}
