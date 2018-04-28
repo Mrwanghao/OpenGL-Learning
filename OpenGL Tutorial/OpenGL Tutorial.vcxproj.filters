@@ -19,9 +19,6 @@
     <Filter Include="资源文件\Shaders">
       <UniqueIdentifier>{079f873c-0953-43d0-a551-8f5b4eb58ede}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\Collada">
-      <UniqueIdentifier>{d2179c6f-9de5-4c51-be63-3296d71c5651}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\tinyxml2">
       <UniqueIdentifier>{76d01e98-cf8e-4dec-b8a0-aa968670616f}</UniqueIdentifier>
     </Filter>
@@ -163,11 +160,14 @@
     <ClCompile Include="ImageSet.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Collada\Collada.cpp">
-      <Filter>源文件\Collada</Filter>
-    </ClCompile>
     <ClCompile Include="tinyxml2\tinyxml2.cpp">
       <Filter>源文件\tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="Collada.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -270,11 +270,14 @@
     <ClInclude Include="ImageSet.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Collada\Collada.h">
-      <Filter>源文件\Collada</Filter>
-    </ClInclude>
     <ClInclude Include="tinyxml2\tinyxml2.h">
       <Filter>源文件\tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="Collada.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

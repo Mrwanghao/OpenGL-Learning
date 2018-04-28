@@ -1,5 +1,9 @@
-﻿  main.cpp
-c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(220): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
-c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(225): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
-c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\main.cpp(230): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+﻿  Collada.cpp
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\collada.cpp(321): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\collada.cpp(325): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+c:\users\wanghao\source\repos\opengl tutorial\opengl tutorial\collada.cpp(329): warning C4244: “=”: 从“float”转换到“unsigned short”，可能丢失数据
+  正在生成代码...
+  正在编译...
+  main.cpp
+  正在生成代码...
   OpenGL Tutorial.vcxproj -> C:\Users\wanghao\source\repos\OpenGL Tutorial\Debug\OpenGL Tutorial.exe

@@ -17,7 +17,7 @@ namespace Renderer
 	{
 		init_buffers();
 
-		load_image(pTexFileName);
+		mTextureID = load_image(pTexFileName);
 	}
 
 	Texture2D::~Texture2D()
@@ -39,14 +39,7 @@ namespace Renderer
 		};
 		mVertexArray->addBuffer(new Buffer(vertices, 4 * 3, 3), 0);
 
-		GLfloat colors[] =
-		{
-			1.0f, 1.0f, 1.0f,
-			1.0f, 1.0f, 1.0f,
-			1.0f, 1.0f, 1.0f,
-			1.0f, 1.0f, 1.0f,
-		};
-		mVertexArray->addBuffer(new Buffer(colors, 4 * 3, 3), 1);
+		
 
 		GLfloat texcoords[] =
 		{
@@ -55,7 +48,7 @@ namespace Renderer
 			1.0f, 1.0f,
 			1.0f, 0.0f,
 		};
-		mVertexArray->addBuffer(new Buffer(texcoords, 4 * 2, 2), 2);
+		mVertexArray->addBuffer(new Buffer(texcoords, 4 * 2, 2), 1);
 
 		GLushort indices[] =
 		{ 

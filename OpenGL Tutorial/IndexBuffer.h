@@ -16,7 +16,10 @@ namespace Renderer
 
 		inline GLint getCount() const { return mCount; }
 
+
 	private:
+		void bindData(GLushort *pData, GLint pCount);
+		unsigned short* m_Data;
 		GLuint mIndexBufferID;
 		GLint mCount;
 	};

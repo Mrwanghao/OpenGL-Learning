@@ -25,7 +25,6 @@ namespace Renderer
 		void loadHeightMap(const char * fileName);
 		void draw(const Window &mWindow) const;
 		void setSize(int _width, int _cellWidth);
-		void setDataToBuffer();
 
 	private:
 		VertexArray *mVertexArray;
@@ -36,6 +35,7 @@ namespace Renderer
 		std::vector<float> _vertices;
 
 	private:
+		void setDataToBuffer();
 		int GetHeight(int _x, int _y);
 	};
 

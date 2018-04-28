@@ -5,6 +5,9 @@ in vec3 out_pos;
 out vec4 FragColor;
 
 
+uniform sampler2D texture01;
+uniform sampler2D texture02;
+
 void main()
 {
 	if (out_pos.y > 80.0f)

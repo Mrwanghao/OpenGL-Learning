@@ -45,6 +45,7 @@ namespace Renderer
 			return;
 		fclose(file);
 
+		setDataToBuffer();
 	}
 
 	void Terrain::draw(const Window &mWindow) const
