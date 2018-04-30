@@ -4,16 +4,19 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-	extern Renderer::Camera mCamera;
+#include "Camera.h"
+#include "Window.h"
+	extern System::Camera mCamera;
+	extern Renderer::Window mWindow;
 
 namespace Renderer {
 
 	SkyBox::SkyBox()
 		:
-		m_shader(new Shader("../Shaders/SkyBox.vs", "../Shaders/SkyBox.fs"))
+		mShader(new Shader("SkyBox.vs", "SkyBox.fs")),
+		mVertexArray(new VertexArray())
 	{
-		init_attributes();
+		initAttributes();
 
 
 	}
@@ -21,17 +24,13 @@ namespace Renderer {
 
 	SkyBox::~SkyBox()
 	{
-		delete m_vertexArray;
-		delete m_positionBuffer;
-
+		if (mVertexArray) delete mVertexArray; mVertexArray = nullptr;
+		if (mShader) delete mShader; mShader = nullptr;
 	}
 
-	void SkyBox::init_attributes()
+	void SkyBox::initAttributes()
 	{
-
-		m_vertexArray = new VertexArray();
-
-		float skyboxVertices[] = {
+		GLfloat skyboxVertices[] = {
 			// positions          
 			-1.0f,  1.0f, -1.0f,
 			-1.0f, -1.0f, -1.0f,
@@ -76,34 +75,28 @@ namespace Renderer {
 			1.0f, -1.0f,  1.0f
 		};
 
-		m_positionBuffer = new Buffer(skyboxVertices, 6 * 6 * 3, 3);
-		m_vertexArray->addBuffer(m_positionBuffer, 0);
+		mVertexArray->addBuffer(new Buffer(skyboxVertices, 6 * 3, 3), 0);
 
-		std::vector<std::string> faces
-		{
-			"skybox/right.jpg",
-			"skybox/left.jpg",
-			"skybox/top.jpg",
-			"skybox/bottom.jpg",
-			"skybox/front.jpg",
-			"skybox/back.jpg",
-		};
-
-		m_shader->setInt("skybox", 0);
-
+		
 
 	}
 
-	void SkyBox::draw(Window _window)
+	void SkyBox::initCubeTextures()
 	{
-		m_shader->enable();
+		glGenTextures(1, &mCubeTexturesID);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, mCubeTexturesID);
 
+	}
+
+	void SkyBox::draw()
+	{
+		mShader->enable();
 
 		glm::mat4 model;
 		glm::mat4 view = mCamera.GetViewMatrix();
-		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)_window.mWidth / (float)_window.mHeight, 0.1f, 100.0f);
-		m_shader->setMat4("model", model);
-		m_shader->setMat4("view", view);
+		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 100.0f);
+		mShader->setMat4("model", model);
+		mShader->setMat4("view", view);
 	}
 
 	

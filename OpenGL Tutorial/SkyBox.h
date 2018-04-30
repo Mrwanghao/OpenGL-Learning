@@ -1,11 +1,8 @@
 #pragma once
 #include <glad/glad.h>
 
-#include "stb_image.h"
 #include "VertexArray.h"
-#include "Buffer.h"
 #include "Shader.h"
-#include "Window.h"
 #include <vector>
 #include <string>
 
@@ -19,15 +16,16 @@ namespace Renderer {
 		~SkyBox();
 
 	private:
-		VertexArray * m_vertexArray;
-		Buffer * m_positionBuffer;
-		Shader *m_shader;
+		VertexArray * mVertexArray;
+		Shader *mShader;
+		GLuint mCubeTexturesID;
 
 	private:
-		void init_attributes();
+		void initAttributes();
+		void initCubeTextures();
 
 	public:
-		void draw(Window _window);
+		void draw();
 	};
 
 }

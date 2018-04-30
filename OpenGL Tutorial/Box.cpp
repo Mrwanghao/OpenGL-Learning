@@ -4,58 +4,115 @@
 
 Box::Box()
 {
-	m_VertexArray = new Renderer::VertexArray();
-
 	GLfloat vertices[] =
 	{
-		 0.5f,  0.5f,  0.5f, //0
-		 0.5f, -0.5f,  0.5f, //1
-		-0.5f,  0.5f,  0.5f, //2
-		-0.5f, -0.5f,  0.5f, //3
-		 0.5f,	0.5f, -0.5f, //4
-		 0.5f, -0.5f, -0.5f, //5
-		-0.5f,  0.5f, -0.5f, //6
-		-0.5f, -0.5f, -0.5f, //7
+		-0.5f, -0.5f, -0.5f,
+		0.5f, -0.5f, -0.5f, 
+		0.5f,  0.5f, -0.5f, 
+		0.5f,  0.5f, -0.5f, 
+		-0.5f,  0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		-0.5f, -0.5f,  0.5f,
+		0.5f, -0.5f,  0.5f, 
+		0.5f,  0.5f,  0.5f, 
+		0.5f,  0.5f,  0.5f, 
+		-0.5f,  0.5f,  0.5f,
+		-0.5f, -0.5f,  0.5f,
+
+		-0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f, -0.5f,
+		-0.5f, -0.5f,  0.5f,
+		-0.5f,  0.5f,  0.5f,
+
+		0.5f,  0.5f,  0.5f, 
+		0.5f,  0.5f, -0.5f, 
+		0.5f, -0.5f, -0.5f, 
+		0.5f, -0.5f, -0.5f, 
+		0.5f, -0.5f,  0.5f, 
+		0.5f,  0.5f,  0.5f, 
+
+		-0.5f, -0.5f, -0.5f,
+		0.5f, -0.5f, -0.5f, 
+		0.5f, -0.5f,  0.5f, 
+		0.5f, -0.5f,  0.5f, 
+		-0.5f, -0.5f,  0.5f,
+		-0.5f, -0.5f, -0.5f,
+
+		-0.5f,  0.5f, -0.5f,
+		0.5f,  0.5f, -0.5f, 
+		0.5f,  0.5f,  0.5f, 
+		0.5f,  0.5f,  0.5f, 
+		-0.5f,  0.5f,  0.5f,
+		-0.5f,  0.5f, -0.5f,
 	};
-	m_VertexArray->addBuffer(new Renderer::Buffer(vertices, 8 * 3, 3), 0);
+	mVertexArray->addBuffer(new Renderer::Buffer(vertices, 24 * 3, 3), 0);
 
 	GLfloat coordinates[] =
 	{
-		0.0f
-	};
-	m_VertexArray->addBuffer(new Renderer::Buffer(coordinates, 24 * 2, 2), 1);
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f,
 
-	GLfloat normals[] =
-	{
-		0.0f,
-	};
-	m_VertexArray->addBuffer(new Renderer::Buffer(normals, 24 * 3, 3), 2);
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f,
 
-	GLushort indices[] =
-	{
-		0,
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+
+		1.0f, 0.0f,
+		1.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 1.0f,
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+
+		0.0f, 1.0f,
+		1.0f, 1.0f,
+		1.0f, 0.0f,
+		1.0f, 0.0f,
+		0.0f, 0.0f,
+		0.0f, 1.0f,
+
+		0.0f, 1.0f,
+		1.0f, 1.0f,
+		1.0f, 0.0f,
+		1.0f, 0.0f,
+		0.0f, 0.0f,
+		0.0f, 1.0f
 	};
-	m_IndexBuffer = new Renderer::IndexBuffer(indices, 24);
+	mVertexArray->addBuffer(new Renderer::Buffer(coordinates, 24 * 2, 2), 1);
+
+	mIndexBuffer = nullptr;
 
 }
 
 Box::~Box()
 {
-	if (m_VertexArray)
-	{
-		delete m_VertexArray;
-	}
-	m_VertexArray = nullptr;
+	if (mVertexArray) delete mVertexArray; mVertexArray = nullptr;
+	if (mIndexBuffer) delete mIndexBuffer; mIndexBuffer = nullptr;
 
-	if (m_IndexBuffer)
-	{
-		delete m_IndexBuffer;
-	}
-	m_IndexBuffer = nullptr;
 }
 
 void Box::draw() const
 {
 
 
+}
+
+void Box::initBufferAndVertexArray()
+{
 }

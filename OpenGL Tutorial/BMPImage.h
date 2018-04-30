@@ -5,7 +5,7 @@
 class BMPImage
 {
 public:
-	BMPImage();
+	BMPImage(const char *fileName);
 	~BMPImage();
 
 public:

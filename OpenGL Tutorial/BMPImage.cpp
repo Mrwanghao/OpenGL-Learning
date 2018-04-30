@@ -2,7 +2,7 @@
 
 
 
-BMPImage::BMPImage()
+BMPImage::BMPImage(const char *fileName)
 {
 	
 }

@@ -59,6 +59,24 @@
     <None Include="SkyBox.vs">
       <Filter>资源文件\Shaders</Filter>
     </None>
+    <None Include="framebuffer_screen.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="framebuffer.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="framebuffer.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="framebuffer_screen.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="collada.vs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
+    <None Include="collada.fs">
+      <Filter>资源文件\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -169,6 +187,12 @@
     <ClCompile Include="Animation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Quad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -267,9 +291,6 @@
     <ClInclude Include="MaterialManager.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="ImageSet.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="tinyxml2\tinyxml2.h">
       <Filter>源文件\tinyxml2</Filter>
     </ClInclude>
@@ -277,6 +298,15 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSet.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Quad.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

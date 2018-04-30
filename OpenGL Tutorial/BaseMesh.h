@@ -3,24 +3,26 @@
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 
+#include "VertexArray.h"
+#include "Buffer.h"
+#include "IndexBuffer.h"
+
 class BaseMesh
 {
-private:
-	virtual void initFaces() = 0;
 
 public:
 	BaseMesh();
-	BaseMesh(const BaseMesh& ths);
 	virtual ~BaseMesh();
 
 public:
-	int vertexCount;
-	int indexCount;
-	glm::vec4 *vertices;
-	glm::vec3 *normals;
-	glm::vec2 *texcoords;
-	int *materials;
-	int *indices;
+	Renderer::VertexArray *mVertexArray;
+	Renderer::IndexBuffer *mIndexBuffer;
+
+private:
+	virtual void initBufferAndVertexArray() = 0;
+
+public:
+	virtual void draw() const;
 
 };
 

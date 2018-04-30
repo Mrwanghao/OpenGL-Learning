@@ -7,7 +7,7 @@
 #include "Buffer.h"
 #include "Shader.h"
 #include "IndexBuffer.h"
-#include "Window.h"
+
 
 namespace Renderer
 {
@@ -27,10 +27,11 @@ namespace Renderer
 		
 		void init_buffers();
 
+
 	public:
 		void enable() const;
 		void disable() const;
-		void draw(const Window &mWindow) const;
+		void draw() const;
 
 		Shader* getShader() const { return mShader; }
 	};

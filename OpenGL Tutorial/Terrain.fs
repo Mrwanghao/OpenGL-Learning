@@ -1,24 +1,24 @@
 #version 330 core
 
-in vec3 out_pos;
+in float out_pos_y;
+in vec2 out_texcoord;
 
 out vec4 FragColor;
 
-
+uniform sampler2D texture00;
 uniform sampler2D texture01;
-uniform sampler2D texture02;
 
 void main()
 {
-	if (out_pos.y > 80.0f)
+	if (out_pos_y > 140.0f / 255.0f)
 	{
-		FragColor = vec4(cos (out_pos.x), out_pos.y / 255.0f, cos (out_pos.z) , 1.0f);
+		FragColor = texture(texture00, out_texcoord);
 	}
 	else
 	{
-		FragColor = vec4(cos (out_pos.x), 1.0f - out_pos.y / 255.0f, cos (out_pos.z), 1.0f);
+		float alpha = out_pos_y / (140.0f / 255.0f);
+		FragColor = texture(texture00, out_texcoord) * alpha + texture(texture01, out_texcoord) * (1 - alpha);
 	}
-
-
 	
+
 }

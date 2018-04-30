@@ -7,18 +7,24 @@
 
 
 	extern Renderer::Camera mCamera;
+	extern Renderer::Window mWindow;
 
 namespace Renderer
 {
 
-	Terrain::Terrain()
+	Terrain::Terrain(const char *fileName)
 		:
 		mVertexArray(new VertexArray()),
 		mShader(new Shader("Terrain.vs", "Terrain.fs")),
 		mWidth(1024),
 		mCellWidth(1)
 	{
-
+		loadHeightMap(fileName);
+		addTexture("terrain_01.jpg");
+		addTexture("terrain_02.jpg");
+		mShader->enable();
+		mShader->setInt(std::string("texture00"), 0);
+		mShader->setInt(std::string("texture01"), 1);
 	}
 
 
@@ -48,10 +54,17 @@ namespace Renderer
 		setDataToBuffer();
 	}
 
-	void Terrain::draw(const Window &mWindow) const
+	void Terrain::draw() const
 	{
 		mVertexArray->enable();
+		for (int i = 0; i < _textureIDs.size(); i++)
+		{
+			glActiveTexture(GL_TEXTURE0 + i);
+			glBindTexture(GL_TEXTURE_2D, _textureIDs[i]);
+
+		}
 		mShader->enable();
+
 
 		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 1000.0f);
 		mShader->setMat4("projection", projection);
@@ -59,7 +72,10 @@ namespace Renderer
 		glm::mat4 view = mCamera.GetViewMatrix();
 		mShader->setMat4("view", view);
 
-		glm::mat4 model = glm::mat4(0.000001f);
+		glm::mat4 model;
+		model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(-512.0f, -200.0f, -1024.0f));
+		
 		mShader->setMat4("model", model);
 
 		glDrawArrays(GL_TRIANGLES, 0, (mWidth - 1) * (mWidth - 1 ) * 6);
@@ -74,9 +90,17 @@ namespace Renderer
 		mCellWidth = _cellWidth;
 	}
 
+	void Terrain::addTexture(const char * fileName)
+	{
+		GLuint _textureID = load_image(fileName);
+		_textureIDs.push_back(_textureID);
+	}
+
 	void Terrain::setDataToBuffer()
 	{
-		_vertices.reserve(3 * 6 * (mWidth - 1) * (mWidth - 1));
+		int verticesCount = 6 * (mWidth - 1) * (mWidth - 1);
+
+		_vertices.reserve(3 * verticesCount);
 		for (int row = 0; row < mWidth - 1; row++)
 		{
 			for (int col = 0; col < mWidth - 1; col++)
@@ -106,8 +130,17 @@ namespace Renderer
 				_vertices.push_back(v4.z);
 			}
 		}
+		mVertexArray->addBuffer(new Buffer(_vertices, verticesCount * 3, 3), 0);
 		
-		mVertexArray->addBuffer(new Buffer(_vertices, (mWidth - 1) * (mWidth - 1) * 6, 3), 0);
+
+		_texcoords.reserve(6 * (mWidth - 1) * (mWidth - 1) * 2);
+		for (int i = 0; i < verticesCount; i++)
+		{
+			_texcoords.push_back((float)(_vertices[i * 3	] / mWidth));
+			_texcoords.push_back((float)(_vertices[i * 3 + 2] / mWidth));
+		}
+		mVertexArray->addBuffer(new Buffer(_texcoords, verticesCount * 2, 2), 1);
+		
 	}
 
 	//通过x和y索引来获取相应的高度

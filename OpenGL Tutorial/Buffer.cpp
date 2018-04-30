@@ -31,7 +31,7 @@ namespace Renderer
 	{
 		glGenBuffers(1, &mBufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, mBufferID);
-		glBufferData(GL_ARRAY_BUFFER, 3 * count * sizeof(float), &data[0], GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, count * sizeof(float), &data[0], GL_STATIC_DRAW);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 

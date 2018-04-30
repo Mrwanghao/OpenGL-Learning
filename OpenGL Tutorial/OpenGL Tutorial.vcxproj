@@ -22,6 +22,12 @@
     <Image Include="texture_01.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="collada.fs" />
+    <None Include="collada.vs" />
+    <None Include="framebuffer.fs" />
+    <None Include="framebuffer.vs" />
+    <None Include="framebuffer_screen.fs" />
+    <None Include="framebuffer_screen.vs" />
     <None Include="Model.fs" />
     <None Include="Model.vs" />
     <None Include="SkyBox.fs" />
@@ -45,6 +51,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collada.cpp" />
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="GLTexture2D.cpp" />
@@ -57,6 +64,7 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="MTLLoader.cpp" />
     <ClCompile Include="OBJLoader.cpp" />
+    <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Renderable2D.cpp" />
     <ClCompile Include="Renderer2D.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -84,6 +92,7 @@
     <ClInclude Include="Collada.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="EngineEnum.h" />
+    <ClInclude Include="FrameBuffer.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GLTexture2D.h" />
     <ClInclude Include="ImageSet.h" />
@@ -95,6 +104,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="MTLLoader.h" />
     <ClInclude Include="OBJLoader.h" />
+    <ClInclude Include="Quad.h" />
     <ClInclude Include="Renderable2D.h" />
     <ClInclude Include="Renderer2D.h" />
     <ClInclude Include="Shader.h" />

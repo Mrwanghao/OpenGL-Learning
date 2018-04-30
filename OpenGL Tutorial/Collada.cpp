@@ -11,15 +11,17 @@ using namespace tinyxml2;
 using namespace Renderer;
 
 extern Renderer::Camera mCamera;
+extern Renderer::Window mWindow;
 
 Collada::Collada()
 	:
 	m_ColladaFileName(""),
 	m_VAO(new VertexArray()),
 	m_IndicesLength(0),
-	m_DOC(new XMLDocument)
+	m_DOC(new XMLDocument),
+	m_Shader(new Shader("collada.vs", "collada.fs"))
 {
-	//m_Shader = new Shader("../Model.vs", "../Model.fs");
+	
 }
 
 Collada::Collada(const char *colladaFileName)
@@ -28,7 +30,7 @@ Collada::Collada(const char *colladaFileName)
 	m_VAO(new VertexArray()),
 	m_IndicesLength(0),
 	m_DOC(new XMLDocument),
-	m_Shader(new Shader("Terrain.vs", "Terrain.fs"))
+	m_Shader(new Shader("collada.vs", "collada.fs"))
 {
 	readCollada(m_ColladaFileName);
 	setDataToBuffer();
@@ -59,7 +61,7 @@ void Collada::setDataToIndexBuffer(int index)
 	
 }
 
-void Collada::drawPolylist(const Renderer::Window &mWindow, int index)
+void Collada::drawPolylist(int index)
 {
 	setDataToIndexBuffer(index);
 
@@ -89,11 +91,11 @@ void Collada::updateComputeVertex()
 	
 }
 
-void Collada::draw(const Renderer::Window & mWindow)
+void Collada::draw()
 {
 	for (int i = 0; i < getPolylistSize(); i++)
 	{
-		drawPolylist(mWindow, i);
+		drawPolylist(i);
 	}
 }
 
@@ -177,7 +179,7 @@ void Collada::readAnimations(tinyxml2::XMLElement * element)
 			readAnimation(elementChild);
 		}
 	}
-
+	buildAnimationBoneList();
 }
 
 void Collada::readAnimation(tinyxml2::XMLElement * element)
@@ -221,6 +223,16 @@ void Collada::readAnimation(tinyxml2::XMLElement * element)
 	m_AnimationLibrary.m_BoneAnimations.push_back(_animation);
 }
 
+void Collada::buildAnimationBoneList()
+{
+	
+}
+
+void Collada::buildWeightBoneList()
+{
+
+}
+
 ColladaMesh Collada::readMesh(tinyxml2::XMLElement * element)
 {
 	ColladaMesh _colladaMesh;
@@ -236,6 +248,26 @@ ColladaMesh Collada::readMesh(tinyxml2::XMLElement * element)
 		}
 	}
 	return _colladaMesh;
+}
+
+VisualScene Collada::readVisualScene(tinyxml2::XMLElement * element)
+{
+	VisualSceneLibrary _visualSceneLibrary;
+	
+	XMLElement *elementChild = element->FirstChildElement();
+	VisualScene _visualScene;
+	
+	if (checkValueIsEqualToKey(elementChild, VISUALSCENE))
+	{
+		_visualScene.m_ID = getAttributeStringValue(elementChild, "id");
+		_visualScene.m_Name = getAttributeStringValue(elementChild, "name");
+
+		XMLElement *elementGrandson = elementChild->FirstChildElement();
+		_visualScene.m_Nodes.push_back(readNode(elementGrandson));
+
+	}
+	m_VisualSceneLibrary = _visualSceneLibrary;
+	return _visualScene;
 }
 
 Source Collada::readSource(tinyxml2::XMLElement * element)
@@ -512,6 +544,14 @@ VertexWeights Collada::readVertexWeights(tinyxml2::XMLElement * element)
 	}
 
 	return _vertexWeights;
+}
+
+Node Collada::readNode(tinyxml2::XMLElement * element)
+{
+	Node _node;
+	
+
+	return _node;
 }
 
 

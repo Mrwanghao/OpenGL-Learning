@@ -18,13 +18,14 @@ namespace Renderer
 	class Terrain
 	{
 	public:
-		Terrain();
+		Terrain(const char *fileName);
 		~Terrain();
 
 	public:
 		void loadHeightMap(const char * fileName);
-		void draw(const Window &mWindow) const;
+		void draw() const;
 		void setSize(int _width, int _cellWidth);
+		void addTexture(const char *fileName);
 
 	private:
 		VertexArray *mVertexArray;
@@ -33,7 +34,8 @@ namespace Renderer
 		int mWidth;
 		int mCellWidth;
 		std::vector<float> _vertices;
-
+		std::vector<float> _texcoords;
+		std::vector<GLuint> _textureIDs;
 	private:
 		void setDataToBuffer();
 		int GetHeight(int _x, int _y);

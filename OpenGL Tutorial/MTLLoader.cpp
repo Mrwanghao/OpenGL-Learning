@@ -2,7 +2,7 @@
 #include "Material.h"
 #include "MaterialManager.h"
 #include <fstream>
-
+#include "ImageSet.h"
 #include <sstream>
 #include <iostream>
 #include <stdio.h>
@@ -64,6 +64,10 @@ void MTLLoader::ReadMTLFile()
 			else if (value == "map_Kd")
 			{
 				iss >> texture;
+				if (mtl)
+				{
+					
+				}
 
 
 			}

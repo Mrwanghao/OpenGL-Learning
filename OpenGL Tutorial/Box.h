@@ -5,20 +5,16 @@
 
 #include <glad/glad.h>
 
-#include "VertexArray.h"
-#include "Buffer.h"
-#include "IndexBuffer.h"
 #include "BaseMesh.h"
+#include "Window.h"
 
 class Box : public BaseMesh
 {
 	Box();
 	~Box();
 
-	Renderer::VertexArray *m_VertexArray;
-	Renderer::IndexBuffer *m_IndexBuffer;
 
 public:
 	void draw() const;
-
+	virtual void initBufferAndVertexArray();
 };

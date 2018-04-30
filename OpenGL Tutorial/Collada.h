@@ -34,6 +34,7 @@
 #define V std::string("v")
 #define SAMPLER std::string("sampler")
 #define CHANNEL std::string("channel")
+#define VISUALSCENE std::string("visual_scene")
 
 struct FloatArray
 {
@@ -221,7 +222,8 @@ struct Node
 	std::string m_SID;
 	std::string m_Type;
 	Matrix m_Matrix;
-	std::vector<Node*> m_Nodes;
+	Node *m_NextBrotherNode;
+	Node *m_FirstChildNode;
 	//¸¸×Ó¹ØÏµ
 	Node *m_ParentNode;
 };
@@ -270,8 +272,8 @@ public:
 	Collada(const char *colladaFileName);
 	~Collada();
 
-	void draw(const Renderer::Window &mWindow);
-	void drawPolylist(const Renderer::Window &mWindow, int index);
+	void draw();
+	void drawPolylist(int index);
 
 	void updateComputeVertex();
 
@@ -301,7 +303,7 @@ private:
 	
 	Geometry readGeometry(tinyxml2::XMLElement *element);
 	ColladaMesh readMesh(tinyxml2::XMLElement *element);
-
+	VisualScene readVisualScene(tinyxml2::XMLElement *element);
 
 	Source readSource(tinyxml2::XMLElement *element);
 	Polylist readPolylist(tinyxml2::XMLElement *element);
@@ -311,13 +313,16 @@ private:
 	Skin readSkin(tinyxml2::XMLElement *element);
 	Input readInput(tinyxml2::XMLElement *element);
 	VertexWeights readVertexWeights(tinyxml2::XMLElement *element);
+	Node readNode(tinyxml2::XMLElement *element);
 
 	Controller readController(tinyxml2::XMLElement *element);
 
 	void readAnimations(tinyxml2::XMLElement *element);
 	void readAnimation(tinyxml2::XMLElement *element);
 
-
+private:
+	void buildAnimationBoneList();
+	void buildWeightBoneList();
 
 private:
 	int getVertexCount() { return m_GeometryLibrary.m_Geometry.m_Mesh.m_Sources[0].m_FloatArray.m_Count; }
