@@ -1,4 +1,4 @@
-#if 1
+
 
 
 
@@ -24,8 +24,8 @@
 using namespace tinyxml2;
 
 Renderer::Camera mCamera(glm::vec3(0.0f, 0.0f, 3.0f));
-const unsigned int WINDOW_WIDTH = 800;
-const unsigned int WINDOW_HEIGHT = 600;
+const unsigned int WINDOW_WIDTH = 1280;
+const unsigned int WINDOW_HEIGHT = 720;
 std::string WINDOW_TITLE = std::string("OpenGL Engine");
 Renderer::Window mWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
@@ -34,25 +34,21 @@ int main()
 {
 	using namespace Renderer;
 
-
-	
+	SkyBox skybox;
 	Terrain terrain("heightmap.raw");
-	Texture2D texture2d("texture_01.jpg");
+	Texture2D texture2D("texture_01.jpg");
 	
 	while (!mWindow.closed())
 	{
 		mWindow.clear();
-
+		skybox.draw();
 		terrain.draw();
-		texture2d.draw();
-		
-
+		texture2D.draw();
 		mWindow.update();
 		
-
 	}
 
 	
 	return 0;
 }
-#endif 
+

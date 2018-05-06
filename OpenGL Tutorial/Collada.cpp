@@ -184,7 +184,6 @@ void Collada::readAnimations(tinyxml2::XMLElement * element)
 
 void Collada::readAnimation(tinyxml2::XMLElement * element)
 {
-
 	Animation _animation;
 	_animation.m_ID = getAttributeStringValue(element, "id");
 	

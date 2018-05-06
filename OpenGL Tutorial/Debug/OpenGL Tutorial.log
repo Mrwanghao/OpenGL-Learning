@@ -1,3 +1,0 @@
-﻿  Texture2D.cpp
-LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-  OpenGL Tutorial.vcxproj -> C:\Users\wanghao\source\repos\OpenGL Tutorial\Debug\OpenGL Tutorial.exe

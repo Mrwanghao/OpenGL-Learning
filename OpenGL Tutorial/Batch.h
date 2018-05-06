@@ -12,8 +12,4 @@ class Batch
 
 	void draw() const;
 	void pushDataToBuffer(GLfloat *data);
-
-
-
-
 };

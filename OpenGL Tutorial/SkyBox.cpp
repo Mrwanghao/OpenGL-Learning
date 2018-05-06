@@ -16,14 +16,21 @@ namespace Renderer {
 		mShader(new Shader("SkyBox.vs", "SkyBox.fs")),
 		mVertexArray(new VertexArray())
 	{
+		mFacesFileName.push_back("right.jpg");
+		mFacesFileName.push_back("left.jpg");
+		mFacesFileName.push_back("top.jpg");
+		mFacesFileName.push_back("bottom.jpg");
+		mFacesFileName.push_back("front.jpg");
+		mFacesFileName.push_back("back.jpg");
 		initAttributes();
-
-
+		mShader->enable();
+		mShader->setInt("skybox", 0);
 	}
 
 
 	SkyBox::~SkyBox()
 	{
+		mFacesFileName.clear();
 		if (mVertexArray) delete mVertexArray; mVertexArray = nullptr;
 		if (mShader) delete mShader; mShader = nullptr;
 	}
@@ -34,9 +41,9 @@ namespace Renderer {
 			// positions          
 			-1.0f,  1.0f, -1.0f,
 			-1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f,  1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f,  1.0f, -1.0f,
 			-1.0f,  1.0f, -1.0f,
 
 			-1.0f, -1.0f,  1.0f,
@@ -46,57 +53,61 @@ namespace Renderer {
 			-1.0f,  1.0f,  1.0f,
 			-1.0f, -1.0f,  1.0f,
 
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
 
 			-1.0f, -1.0f,  1.0f,
 			-1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f, -1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f, -1.0f,  1.0f,
 			-1.0f, -1.0f,  1.0f,
 
 			-1.0f,  1.0f, -1.0f,
-			1.0f,  1.0f, -1.0f,
-			1.0f,  1.0f,  1.0f,
-			1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f, -1.0f,
+			 1.0f,  1.0f,  1.0f,
+			 1.0f,  1.0f,  1.0f,
 			-1.0f,  1.0f,  1.0f,
 			-1.0f,  1.0f, -1.0f,
 
 			-1.0f, -1.0f, -1.0f,
 			-1.0f, -1.0f,  1.0f,
-			1.0f, -1.0f, -1.0f,
-			1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
+			 1.0f, -1.0f, -1.0f,
 			-1.0f, -1.0f,  1.0f,
-			1.0f, -1.0f,  1.0f
+			 1.0f, -1.0f,  1.0f
 		};
 
-		mVertexArray->addBuffer(new Buffer(skyboxVertices, 6 * 3, 3), 0);
+		mVertexArray->addBuffer(new Buffer(skyboxVertices, 6 * 6 * 3, 3), 0);
 
-		
-
+		mCubeTexturesID = load_cube_map(mFacesFileName);
 	}
 
-	void SkyBox::initCubeTextures()
-	{
-		glGenTextures(1, &mCubeTexturesID);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, mCubeTexturesID);
-
-	}
 
 	void SkyBox::draw()
 	{
+
+		glDepthFunc(GL_LEQUAL);
+		enable();
+		mVertexArray->enable();
 		mShader->enable();
 
-		glm::mat4 model;
-		glm::mat4 view = mCamera.GetViewMatrix();
+		glActiveTexture(GL_TEXTURE0);
+		glm::mat4 view = glm::mat4(glm::mat3(mCamera.GetViewMatrix()));
 		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 100.0f);
-		mShader->setMat4("model", model);
 		mShader->setMat4("view", view);
+		mShader->setMat4("projection", projection);
+
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		mShader->disable();
+		mVertexArray->disable();
+		disable();
+		glDepthFunc(GL_LESS);
 	}
 
 	

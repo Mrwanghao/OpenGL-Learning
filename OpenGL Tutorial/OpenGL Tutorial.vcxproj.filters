@@ -193,6 +193,12 @@
     <ClCompile Include="FrameBuffer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AssetsManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MtlAndObjModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -308,6 +314,12 @@
     </ClInclude>
     <ClInclude Include="Quad.h">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetsManager.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MtlAndObjModel.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

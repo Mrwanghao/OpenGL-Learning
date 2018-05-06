@@ -42,6 +42,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AssetsManager.cpp" />
     <ClCompile Include="BaseMesh.cpp" />
     <ClCompile Include="Batch.cpp" />
     <ClCompile Include="BMPImage.cpp" />
@@ -62,6 +63,7 @@
     <ClCompile Include="MaterialManager.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="MtlAndObjModel.cpp" />
     <ClCompile Include="MTLLoader.cpp" />
     <ClCompile Include="OBJLoader.cpp" />
     <ClCompile Include="Quad.cpp" />
@@ -82,6 +84,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="AssetsManager.h" />
     <ClInclude Include="BaseMesh.h" />
     <ClInclude Include="Batch.h" />
     <ClInclude Include="BMPImage.h" />
@@ -102,6 +105,7 @@
     <ClInclude Include="maths.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="MtlAndObjModel.h" />
     <ClInclude Include="MTLLoader.h" />
     <ClInclude Include="OBJLoader.h" />
     <ClInclude Include="Quad.h" />

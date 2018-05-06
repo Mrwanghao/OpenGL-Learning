@@ -207,7 +207,8 @@ void OBJLoader::readObjFile()
 		else if (content[0] == 'u' && content[1] == 's')
 		{
 			std::istringstream iss(content);
-			iss >> mtl;
+			iss >> s1 >> mtl;
 		}
 	}
+	ifs.close();
 }

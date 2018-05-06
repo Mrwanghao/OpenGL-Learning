@@ -66,7 +66,7 @@ namespace Renderer
 		mShader->enable();
 
 
-		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 1000.0f);
+		glm::mat4 projection = glm::perspective(glm::radians(mCamera.Zoom), (float)mWindow.mWidth / (float)mWindow.mHeight, 0.1f, 2000.0f);
 		mShader->setMat4("projection", projection);
 
 		glm::mat4 view = mCamera.GetViewMatrix();

@@ -18,6 +18,7 @@ ImageSet::~ImageSet()
 	{
 		delete _images[i];
 	}
+	delete _images;
 	_images = nullptr;
 	_imageNames.clear();
 
