@@ -8,8 +8,7 @@
 #include <string>
 #include <glad/glad.h>
 
-namespace Renderer
-{
+
 	enum CompileType { COMPILE, LINK };
 
 	class Shader
@@ -86,7 +85,7 @@ namespace Renderer
 		void checkCompileErrors(GLuint shader, CompileType pCompileType);
 	};
 
-};
+
 
 #endif // !_SHADER_H_
 

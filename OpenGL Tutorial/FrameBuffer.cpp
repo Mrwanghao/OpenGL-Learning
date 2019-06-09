@@ -1,7 +1,7 @@
 #include "FrameBuffer.h"
 #include "Window.h"
 
-extern Renderer::Window mWindow;
+extern Window mWindow;
 
 FrameBuffer::FrameBuffer()
 {

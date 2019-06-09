@@ -12,8 +12,8 @@ public:
 
 private:
 	OBJLoader * objLoader;
-	Renderer::VertexArray *mVertexArray;
-	Renderer::IndexBuffer *mIndexBuffer;
+	VertexArray *mVertexArray;
+	IndexBuffer *mIndexBuffer;
 
 private:
 	void setDataToBuffer();

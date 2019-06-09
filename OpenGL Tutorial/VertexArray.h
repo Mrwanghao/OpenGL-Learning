@@ -5,25 +5,23 @@
 #include <vector>
 #include "Buffer.h"
 
-namespace Renderer
+
+struct Vertex;
+
+class VertexArray
 {
-	struct Vertex;
+private:
+	GLuint mVertexArrayID;
+	std::vector<Buffer*> mBuffers;
+public:
+	VertexArray();
+	~VertexArray();
 
-	class VertexArray
-	{
-	private:
-		GLuint mVertexArrayID;
-		std::vector<Buffer*> mBuffers;
-	public:
-		VertexArray();
-		~VertexArray();
-
-	public:
-		inline void enable() const { glBindVertexArray(mVertexArrayID); }
-		inline void disable() const { glBindVertexArray(0); }
+public:
+	inline void enable() const { glBindVertexArray(mVertexArrayID); }
+	inline void disable() const { glBindVertexArray(0); }
 		
-		void addBuffer(Buffer *pBuffer, GLuint pIndex);
-		void addBuffer(Buffer *pBuffer, GLuint pIndex, GLuint pCount, size_t pTotalSize, void *pData, bool pIsPushBack = false);
-	};
-
+	void addBuffer(Buffer *pBuffer, GLuint pIndex);
+	void addBuffer(Buffer *pBuffer, GLuint pIndex, GLuint pCount, size_t pTotalSize, void *pData, bool pIsPushBack = false);
 };
+

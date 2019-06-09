@@ -2,10 +2,10 @@
 #include "Window.h"
 #include "stb_image.h"
 
-	extern Renderer::Camera mCamera;
+	extern Camera mCamera;
 	extern enum Camera_Movement;
 
-	extern float Renderer::mDeltaTime;
+	extern float mDeltaTime;
 	bool firstMouse = false;
 	double lastX = 0.0f;
 	double lastY = 0.0f;
@@ -18,13 +18,13 @@
 		}
 
 		if (glfwGetKey(pWindow, GLFW_KEY_W) == GLFW_PRESS)
-			mCamera.ProcessKeyboard(System::Camera_Movement::FORWARD, Renderer::mDeltaTime);
+			mCamera.ProcessKeyboard(Camera_Movement::FORWARD, mDeltaTime);
 		if (glfwGetKey(pWindow, GLFW_KEY_S) == GLFW_PRESS)
-			mCamera.ProcessKeyboard(System::Camera_Movement::BACKWARD, Renderer::mDeltaTime);
+			mCamera.ProcessKeyboard(Camera_Movement::BACKWARD, mDeltaTime);
 		if (glfwGetKey(pWindow, GLFW_KEY_A) == GLFW_PRESS)
-			mCamera.ProcessKeyboard(System::Camera_Movement::LEFT, Renderer::mDeltaTime);
+			mCamera.ProcessKeyboard(Camera_Movement::LEFT, mDeltaTime);
 		if (glfwGetKey(pWindow, GLFW_KEY_D) == GLFW_PRESS)
-			mCamera.ProcessKeyboard(System::Camera_Movement::RIGHT, Renderer::mDeltaTime);
+			mCamera.ProcessKeyboard(Camera_Movement::RIGHT, mDeltaTime);
 		
 	}
 

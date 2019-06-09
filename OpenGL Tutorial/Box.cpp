@@ -48,7 +48,7 @@ Box::Box()
 		-0.5f,  0.5f,  0.5f,
 		-0.5f,  0.5f, -0.5f,
 	};
-	mVertexArray->addBuffer(new Renderer::Buffer(vertices, 24 * 3, 3), 0);
+	mVertexArray->addBuffer(new Buffer(vertices, 24 * 3, 3), 0);
 
 	GLfloat coordinates[] =
 	{
@@ -94,7 +94,7 @@ Box::Box()
 		0.0f, 0.0f,
 		0.0f, 1.0f
 	};
-	mVertexArray->addBuffer(new Renderer::Buffer(coordinates, 24 * 2, 2), 1);
+	mVertexArray->addBuffer(new Buffer(coordinates, 24 * 2, 2), 1);
 
 	mIndexBuffer = nullptr;
 

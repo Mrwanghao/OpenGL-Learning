@@ -7,8 +7,8 @@
 
 class Batch
 {
-	Renderer::VertexArray *m_VertexArray;
-	Renderer::IndexBuffer *m_IndexBuffer;
+	VertexArray *m_VertexArray;
+	IndexBuffer *m_IndexBuffer;
 
 	void draw() const;
 	void pushDataToBuffer(GLfloat *data);

@@ -23,11 +23,11 @@
 
 using namespace tinyxml2;
 
-Renderer::Camera mCamera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera mCamera(glm::vec3(0.0f, 0.0f, 3.0f));
 const unsigned int WINDOW_WIDTH = 1280;
 const unsigned int WINDOW_HEIGHT = 720;
 std::string WINDOW_TITLE = std::string("OpenGL Engine");
-Renderer::Window mWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
+Window mWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
 
 int main()

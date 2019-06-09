@@ -282,12 +282,12 @@ public:
 	ControllerLibrary m_ControllerLibrary;
 	AnimationLibrary m_AnimationLibrary;
 	VisualSceneLibrary m_VisualSceneLibrary;
-	Renderer::Shader *m_Shader;
+	Shader *m_Shader;
 
 private:
 	const char *m_ColladaFileName;
-	Renderer::VertexArray *m_VAO;
-	Renderer::IndexBuffer *m_IBO;
+	VertexArray *m_VAO;
+	IndexBuffer *m_IBO;
 	tinyxml2::XMLDocument *m_DOC;
 	unsigned short *m_IndicesData;
 	int m_IndicesLength;

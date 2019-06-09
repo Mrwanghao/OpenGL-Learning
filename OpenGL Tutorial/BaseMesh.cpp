@@ -1,7 +1,5 @@
 #include "BaseMesh.h"
 
-using namespace Renderer;
-
 BaseMesh::BaseMesh()
 	:
 	mVertexArray(new VertexArray())

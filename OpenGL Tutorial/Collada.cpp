@@ -8,10 +8,9 @@
 #include <glm/gtc/type_ptr.hpp>
 
 using namespace tinyxml2;
-using namespace Renderer;
 
-extern Renderer::Camera mCamera;
-extern Renderer::Window mWindow;
+extern Camera mCamera;
+extern Window mWindow;
 
 Collada::Collada()
 	:

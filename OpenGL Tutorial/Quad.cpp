@@ -1,8 +1,6 @@
 #include "Quad.h"
 #include "Buffer.h"
 
-using namespace Renderer;
-
 Quad::Quad()
 {
 

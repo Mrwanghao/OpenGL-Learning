@@ -1,7 +1,5 @@
 #include "MtlAndObjModel.h"
 
-using namespace Renderer;
-
 MtlAndObjModel::MtlAndObjModel(const char *mtlFileName, const char *objFileName, int vtNumber)
 	:
 	mVertexArray(new VertexArray())

@@ -15,8 +15,8 @@ public:
 	virtual ~BaseMesh();
 
 public:
-	Renderer::VertexArray *mVertexArray;
-	Renderer::IndexBuffer *mIndexBuffer;
+	VertexArray *mVertexArray;
+	IndexBuffer *mIndexBuffer;
 
 private:
 	virtual void initBufferAndVertexArray() = 0;
