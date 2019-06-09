@@ -2,7 +2,6 @@
 
 #include <glad/glad.h>
 #include <string>
-#include "SimpleRenderer2D.h"
 #include "VertexArray.h"
 #include "Buffer.h"
 #include "Shader.h"

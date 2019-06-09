@@ -3,8 +3,6 @@
 
 
 #include "Window.h"
-#include "SimpleRenderer2D.h"
-#include "Renderable2D.h"
 #include "Texture2D.h"
 #include "Model.h"
 #include "Shader.h"
@@ -32,8 +30,6 @@ Window mWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 
 int main()
 {
-	using namespace Renderer;
-
 	SkyBox skybox;
 	Terrain terrain("heightmap.raw");
 	Texture2D texture2D("texture_01.jpg");

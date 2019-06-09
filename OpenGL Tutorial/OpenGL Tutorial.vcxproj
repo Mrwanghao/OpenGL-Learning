@@ -43,11 +43,8 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="AssetsManager.cpp" />
-    <ClCompile Include="BaseMesh.cpp" />
-    <ClCompile Include="Batch.cpp" />
     <ClCompile Include="BMPImage.cpp" />
     <ClCompile Include="BMPLoader.cpp" />
-    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collada.cpp" />
@@ -66,18 +63,13 @@
     <ClCompile Include="MtlAndObjModel.cpp" />
     <ClCompile Include="MTLLoader.cpp" />
     <ClCompile Include="OBJLoader.cpp" />
-    <ClCompile Include="Quad.cpp" />
-    <ClCompile Include="Renderable2D.cpp" />
-    <ClCompile Include="Renderer2D.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="SimpleRenderer2D.cpp" />
     <ClCompile Include="SkyBox.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Texture2D.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="tinyxml2\tinyxml2.cpp" />
-    <ClCompile Include="TransformFeedback.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -85,11 +77,8 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="AssetsManager.h" />
-    <ClInclude Include="BaseMesh.h" />
-    <ClInclude Include="Batch.h" />
     <ClInclude Include="BMPImage.h" />
     <ClInclude Include="BMPLoader.h" />
-    <ClInclude Include="Box.h" />
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collada.h" />
@@ -107,18 +96,13 @@
     <ClInclude Include="MtlAndObjModel.h" />
     <ClInclude Include="MTLLoader.h" />
     <ClInclude Include="OBJLoader.h" />
-    <ClInclude Include="Quad.h" />
-    <ClInclude Include="Renderable2D.h" />
-    <ClInclude Include="Renderer2D.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="SimpleRenderer2D.h" />
     <ClInclude Include="SkyBox.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Terrain.h" />
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="tinyxml2\tinyxml2.h" />
-    <ClInclude Include="TransformFeedback.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
